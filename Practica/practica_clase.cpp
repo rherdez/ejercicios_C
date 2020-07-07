@@ -8,5 +8,6 @@ int main(int argc, char** argv) {
 	h.nombre="Pedro";
 	cout<<h.nombre<<endl;
 	cout<<h.id<<endl;
+	///nuevo
 	return 0;
 }

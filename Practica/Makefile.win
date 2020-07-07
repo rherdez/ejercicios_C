@@ -1,15 +1,15 @@
-# Project: practica
+# Project: practica_clase
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = practica1.o persona.o empleado.o
-LINKOBJ  = practica1.o persona.o empleado.o
+OBJ      = practica_clase.o persona.o humano.o
+LINKOBJ  = practica_clase.o persona.o humano.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = practica.exe
+BIN      = practica_clase.exe
 CXXFLAGS = $(CXXINCS) -std=c++11
 CFLAGS   = $(INCS) -std=c++11
 RM       = rm.exe -f
@@ -24,11 +24,11 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-practica1.o: practica1.cpp
-	$(CPP) -c practica1.cpp -o practica1.o $(CXXFLAGS)
+practica_clase.o: practica_clase.cpp
+	$(CPP) -c practica_clase.cpp -o practica_clase.o $(CXXFLAGS)
 
 persona.o: persona.cpp
 	$(CPP) -c persona.cpp -o persona.o $(CXXFLAGS)
 
-empleado.o: empleado.cpp
-	$(CPP) -c empleado.cpp -o empleado.o $(CXXFLAGS)
+humano.o: humano.cpp
+	$(CPP) -c humano.cpp -o humano.o $(CXXFLAGS)

@@ -5,6 +5,7 @@ using namespace std;
 class humano
 {
 	public:
+		humano(int);
 		int id;
 		string nombre;
 		int edad;

@@ -9,3 +9,7 @@ string humano::obs(){
 		}
 }
 
+	humano::humano(int x){
+		id=x;
+	}
+

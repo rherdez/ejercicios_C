@@ -1,5 +1,5 @@
 #include <iostream>
-#include "humano.h"
+#include "empleado.h"
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 
@@ -9,8 +9,8 @@ struct{
 	
 } persona;
 
-humano h;
 
+empleado h(2);
 int main(int argc, char** argv) {
 	persona.id=2;
 	persona.nombre="Pedro";
@@ -26,6 +26,7 @@ int main(int argc, char** argv) {
 	cout<<"ID:"<<h.id<<endl;
 	cout<<"Nombre: "<<h.nombre<<endl;
 	cout<<"Obs: "<<h.obs()<<endl;
+	cout<<"Sueldo: "<<h.sueldo<<endl;
 	
 	return 0;
 }

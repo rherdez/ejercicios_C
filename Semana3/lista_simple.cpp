@@ -2,17 +2,25 @@
 #include "nodo.h"
 #include <time.h>
 #include <stdlib.h>
+#include <fstream>
+#include <cstdlib>
+#include <stdio.h>
+#include <ctime>
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
-
+unsigned t0,t1;
 nodo *I,*F,*T,*A;
 nodo temp;
+void remover();
 void agregar();
 void presentar();
 void buscar(int);
 void registro();
 void eliminar();
+void guardar();
+void abrir();
 int op;
+double tiempo;
 int main(int argc, char** argv) {
 	
 	do{
@@ -22,6 +30,8 @@ int main(int argc, char** argv) {
 		cout<<"3) Buscar"<<endl;
 		cout<<"4) Modificar"<<endl;
 		cout<<"5) Eliminar"<<endl;
+		cout<<"6) Guardar"<<endl;
+		cout<<"7) Abrir"<<endl;
 		cout<<"0) Salir"<<endl;
 		cin>>op;
 		
@@ -37,7 +47,12 @@ int main(int argc, char** argv) {
 				agregar();
 				break;
 			case 2:
-				presentar();
+				t0=clock();
+					presentar();
+				t1=clock();
+					tiempo =(double(t1-t0)/CLOCKS_PER_SEC)	;		
+					cout<<"\t\t "<<" Tiempo: "<<tiempo<<endl;
+			
 				break;
 				
 			case 3:
@@ -70,8 +85,18 @@ int main(int argc, char** argv) {
 						registro();
 						eliminar();
 					}
-					
-					
+				case 6:
+					guardar();
+					cout<<"Datos Guardados"	<<endl;
+					break;
+				case 7:
+					t0=clock();
+						abrir();
+						cout<<"Datos Recuperados"	<<endl;
+					t1=clock();
+					tiempo =(double(t1-t0)/CLOCKS_PER_SEC)	;		
+					cout<<"\t\t "<<" Tiempo: "<<tiempo<<endl;
+					break;
 					
 			case 0:
 				break;
@@ -91,12 +116,49 @@ int main(int argc, char** argv) {
 	
 	return 0;
 }
-
+void abrir(){
+	remover();
+	string linea;
+	ifstream fs1("C:\\textos\\ejemplo_24milR.txt",ios::in);
+	while(!fs1.eof()){
+		fs1>>linea;
+		temp.id=stoi(linea);
+		fs1>>linea;
+		temp.nombre=linea;
+	/*	fs1>>linea;
+		temp.sueldo=stod(linea);*/
+		if(!fs1.eof()){
+			agregar();
+		}	
+		
+		
+	}
+	fs1.close();
+}
+void remover(){
+	T=NULL;
+	I=NULL;
+	F=NULL;
+	A=NULL;
+}
+void guardar(){
+	ofstream fs("C:\\textos\\ejemplo_24milR.txt");
+	T=I;
+	while(T!=NULL){
+		
+		fs<<T->id<<"\n";
+		fs<<T->nombre<<"\n";
+	//	fs<<T->sueldo<<"\n";				
+		T=T->sig;
+	}
+	fs.close();
+	
+}
 void agregar(){
 	T=new nodo();
 	T->id=temp.id;
 	T->nombre=temp.nombre;
-	T->sueldo=temp.sueldo;
+//	T->sueldo=temp.sueldo;
 	T->sig=NULL;
 	
 	if(I==NULL){
@@ -115,9 +177,9 @@ void presentar(){
 	while(T!=NULL){
 		cout<<"ID: "<<T->id<<endl;
 		cout<<"Nombre: "<<T->nombre<<endl;
-		cout<<"Sueldo: "<<T->sueldo<<endl;
+	/*	cout<<"Sueldo: "<<T->sueldo<<endl;
 		cout<<"Deduccion: "<<T->deduccion()<<endl;
-		cout<<"Sueldo Neto: "<<T->sueldo-T->deduccion()<<endl;
+		cout<<"Sueldo Neto: "<<T->sueldo-T->deduccion()<<endl;*/
 		T=T->sig;
 	}
 	

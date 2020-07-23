@@ -9,7 +9,7 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 unsigned t0,t1;
-nodo *I,*F,*T,*A;
+nodo *I,*F,*T,*A,*T2;
 nodo temp;
 void remover();
 void agregar();
@@ -19,6 +19,7 @@ void registro();
 void eliminar();
 void guardar();
 void abrir();
+void ordenar();
 int op;
 double tiempo;
 int main(int argc, char** argv) {
@@ -32,6 +33,7 @@ int main(int argc, char** argv) {
 		cout<<"5) Eliminar"<<endl;
 		cout<<"6) Guardar"<<endl;
 		cout<<"7) Abrir"<<endl;
+		cout<<"8) Ordenar"<<endl;
 		cout<<"0) Salir"<<endl;
 		cin>>op;
 		
@@ -97,7 +99,14 @@ int main(int argc, char** argv) {
 					tiempo =(double(t1-t0)/CLOCKS_PER_SEC)	;		
 					cout<<"\t\t "<<" Tiempo: "<<tiempo<<endl;
 					break;
-					
+				case 8:
+						t0=clock();
+					ordenar();
+					cout<<"Datos Ordenados"<<endl;
+					t1=clock();
+					tiempo =(double(t1-t0)/CLOCKS_PER_SEC)	;		
+					cout<<"\t\t "<<" Tiempo: "<<tiempo<<endl;
+					break;
 			case 0:
 				break;
 			default:
@@ -116,6 +125,32 @@ int main(int argc, char** argv) {
 	
 	return 0;
 }
+void ordenar(){
+	T=I;
+	A=I;
+	T2=I;
+	while(T2!=NULL){
+		T=I;
+		A=I;
+		
+		while(T!=NULL){					
+			if(A->id > T->id){							
+				temp.id=A->id;
+				temp.nombre=A->nombre;
+				
+				A->id=T->id;
+				A->nombre=T->nombre;
+				
+				T->id=temp.id;
+				T->nombre=temp.nombre;								
+			}			
+			A=T;
+			T=T->sig;		
+		}
+		T2=T2->sig;
+	}
+}
+
 void abrir(){
 	remover();
 	string linea;

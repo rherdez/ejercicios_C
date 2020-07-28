@@ -1,0 +1,40 @@
+# Project: cubetas
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = cubeta.o nodo_cubeta.o nodo_hijo.o clase_N_hijo.o clase_cubeta.o
+LINKOBJ  = cubeta.o nodo_cubeta.o nodo_hijo.o clase_N_hijo.o clase_cubeta.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = cubetas.exe
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+cubeta.o: cubeta.cpp
+	$(CPP) -c cubeta.cpp -o cubeta.o $(CXXFLAGS)
+
+nodo_cubeta.o: nodo_cubeta.cpp
+	$(CPP) -c nodo_cubeta.cpp -o nodo_cubeta.o $(CXXFLAGS)
+
+nodo_hijo.o: nodo_hijo.cpp
+	$(CPP) -c nodo_hijo.cpp -o nodo_hijo.o $(CXXFLAGS)
+
+clase_N_hijo.o: clase_N_hijo.cpp
+	$(CPP) -c clase_N_hijo.cpp -o clase_N_hijo.o $(CXXFLAGS)
+
+clase_cubeta.o: clase_cubeta.cpp
+	$(CPP) -c clase_cubeta.cpp -o clase_cubeta.o $(CXXFLAGS)

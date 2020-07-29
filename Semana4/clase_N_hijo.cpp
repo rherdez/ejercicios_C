@@ -16,8 +16,7 @@ void clase_N_hijo::agregar(int x, string n){
 }
 
 void clase_N_hijo::presentar(){
-	cout<<"Presentar Hijos"<<endl;
-	
+	cout<<"Presentar Hijos"<<endl;	
 	T=I;
 	while(T!=NULL){
 		cout<<"Id: "<<T->id<<endl;

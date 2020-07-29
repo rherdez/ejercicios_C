@@ -23,12 +23,13 @@ void clase_cubeta::agregar_hijo(int x,string n){
 }
 
 void clase_cubeta::buscar_c(int x){
+
 	bool encontrado=false;
 	if(x<=(F->id/2)){
 		T=I;	
 		while(T!=NULL && encontrado==false){
 			if(T->id==x){
-				cout<<"Id: "<<T->id<<endl;				
+				
 				encontrado=true;
 			}
 			else{
@@ -41,7 +42,7 @@ void clase_cubeta::buscar_c(int x){
 		T=F;	
 		while(T!=NULL && encontrado==false){
 			if(T->id==x){
-				cout<<"Id: "<<T->id<<endl;				
+				
 				encontrado=true;
 			}
 			else{
@@ -65,11 +66,8 @@ void clase_cubeta::buscar_h(int x){
 
 void clase_cubeta::presentar_cubeta(){
 		T=I;	
-		while(T!=NULL ){
-		
-				cout<<"Id: "<<T->id<<endl;				
-			
-		
+		while(T!=NULL ){		
+				cout<<"Id: "<<T->id<<endl;									
 				T=T->sig;
 				
 		}	

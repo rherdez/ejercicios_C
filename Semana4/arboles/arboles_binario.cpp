@@ -67,7 +67,7 @@ void presentar(nodo_binario *P){
 void leer_archivo(){
 	string linea;
 	int id;
-	ifstream fs1("C:\\textos\\ejemplo_24milR.txt",ios::in);
+	ifstream fs1("C:\\textos\\ejemplo24MM.txt",ios::in);
 	while(!fs1.eof()){
 		fs1>>id;
 		//id=stoi(linea);
@@ -76,7 +76,7 @@ void leer_archivo(){
 		if(!fs1.eof()){
 			//validar_cubeta(id);
 			//cubeta.agregar_hijo(id,linea);
-			agregar(id);
+		//	agregar(id);
 		}					
 	}
 	fs1.close();		

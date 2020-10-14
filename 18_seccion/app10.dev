@@ -1,6 +1,6 @@
 [Project]
-FileName=exa22.dev
-Name=exa22
+FileName=app10.dev
+Name=app9
 Type=1
 Ver=2
 ObjFiles=
@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=00000000c0000000000000000
-UnitCount=1
+UnitCount=3
 
 [VersionInfo]
 Major=1
@@ -51,7 +51,27 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=exa22.cpp
+FileName=app10.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit2]
+FileName=empleado.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit3]
+FileName=empleado.cpp
 CompileCpp=1
 Folder=
 Compile=1

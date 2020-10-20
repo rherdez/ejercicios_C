@@ -8,7 +8,6 @@ class nodo1
 		int id;
 		string nombre;
 		nodo1 *sig;
-		
 	protected:
 };
 

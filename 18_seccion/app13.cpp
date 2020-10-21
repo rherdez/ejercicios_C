@@ -8,7 +8,7 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 
-nodo1 *I, *T, *F, *A;
+nodo1 *I, *T, *F, *A,*T2;
 void agregar(int,string);
 void presentar();
 void buscar(int);
@@ -16,6 +16,7 @@ void modificar();
 void eliminar();
 void guardar();
 void abrir();
+void burbuja();
 int op, x;
 string nom;
 int main(int argc, char** argv) {
@@ -28,6 +29,7 @@ int main(int argc, char** argv) {
 		cout<<"5) Eliminar"<<endl;
 		cout<<"6) Guardar"<<endl;
 		cout<<"7) Abrir"<<endl;
+		cout<<"8) Ordenar"<<endl;
 		
 		cout<<"0) Salir"<<endl;
 		cin>>op;
@@ -59,6 +61,9 @@ int main(int argc, char** argv) {
 				break;
 			case 7:
 				abrir();
+				break;
+			case 8:
+				burbuja();
 				break;
 			case 0:
 				break;
@@ -174,4 +179,32 @@ void abrir(){
 			agregar(x,nombre);
 		}
 	}
+}
+
+void burbuja(){
+	int con=0;
+	T2=I;
+	T=I;
+	nodo1 temp;	
+	while(T2!=NULL){		
+		T2=T2->sig;
+		T=I;
+		A=T;
+		T=T->sig;
+		while(T!=NULL ){		
+			if(T->id>A->id){
+				
+				temp.id=T->id;
+				temp.nombre=T->nombre;
+				
+				T->id=A->id;
+				T->nombre=A->nombre;
+				
+				A->id=temp.id;
+				A->nombre=temp.nombre;																								
+			}
+		A=T;
+		T=T->sig;
+		}
+	}			
 }

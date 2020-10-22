@@ -167,10 +167,10 @@ void guardar(){
 	fs.close();
 }
 void abrir(){
-	char linea[25];
-	char nombre[50];
+	char linea[4];
+	char nombre[4];
 	int x;
-	ifstream fi("C:\\textos\\ejemplo_mil.txt");
+	ifstream fi("C:\\textos\\ejemplo_24milR.txt");
 	while(!fi.eof()){
 		fi>>linea;
 		fi>>nombre;

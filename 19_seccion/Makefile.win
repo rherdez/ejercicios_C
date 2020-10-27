@@ -1,15 +1,15 @@
-# Project: app14
+# Project: arboles
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = app14.o nodo2.o
-LINKOBJ  = app14.o nodo2.o
+OBJ      = arboles.o nodo3.o
+LINKOBJ  = arboles.o nodo3.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = app14.exe
+BIN      = arboles.exe
 CXXFLAGS = $(CXXINCS) -std=c++11
 CFLAGS   = $(INCS) -std=c++11
 RM       = rm.exe -f
@@ -24,8 +24,8 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-app14.o: app14.cpp
-	$(CPP) -c app14.cpp -o app14.o $(CXXFLAGS)
+arboles.o: arboles.cpp
+	$(CPP) -c arboles.cpp -o arboles.o $(CXXFLAGS)
 
-nodo2.o: nodo2.cpp
-	$(CPP) -c nodo2.cpp -o nodo2.o $(CXXFLAGS)
+nodo3.o: nodo3.cpp
+	$(CPP) -c nodo3.cpp -o nodo3.o $(CXXFLAGS)

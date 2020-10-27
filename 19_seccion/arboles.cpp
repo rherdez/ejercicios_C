@@ -4,20 +4,20 @@
 using namespace std;
 
 nodo3 *R, *T;
+
 void agregar(nodo3 *);
 void presentar(nodo3 *);
-void presentar_or(nodo3 *);
-bool buscar(nodo3 *, int);
+void ordenar(nodo3 *);
+
 int op,x;
-
-
 
 int main(int argc, char** argv) {
 	do{
 		cout<<"Menu"<<endl;
 		cout<<"1) Agregar"<<endl;
 		cout<<"2) Presentar"<<endl;
-		cout<<"3) Presentar Ordenados"<<endl;
+		cout<<"3) Ordenado"<<endl;
+		
 		cout<<"0) Salir"<<endl;
 		cin>>op;
 		
@@ -29,28 +29,29 @@ int main(int argc, char** argv) {
 				T->id=x;
 				T->De=NULL;
 				T->Iz=NULL;
-				
 				agregar(R);
 				break;
+			
 			case 2:
-				presentar(R);			
+				presentar(R);
 				break;
 			case 3:
-				presentar_or(R);			
-				break;
+				ordenar(R);
 			case 0:
 				break;
 			default:
 				cout<<"Opcion no valida"<<endl;
 		}
+		
 	}while(op!=0);
-	
 	return 0;
 }
 
 void agregar(nodo3 *p){
+	
 	if(R==NULL){
 		R=T;
+		return;
 	}
 	else if(T->id>p->id){
 		if(p->De==NULL){
@@ -59,9 +60,8 @@ void agregar(nodo3 *p){
 		else{
 			agregar(p->De);
 		}
-						
 	}
-	else{		
+	else{
 		if(p->Iz==NULL){
 			p->Iz=T;
 		}
@@ -77,42 +77,23 @@ void presentar(nodo3 *p){
 		return;
 	}
 	else{
-		cout<<"ID: "<<p->id<<endl;
+		cout<<"Id: "<<p->id<<endl;
 		presentar(p->De);
 		presentar(p->Iz);
-	}
+	
+	}	
 }
-void presentar_or(nodo3 *p){
-	if(p==NULL){
+void ordenar(nodo3 *p){
+		if(p==NULL){
 		return;
 	}
 	else{
-	
-		presentar_or(p->De);
-			cout<<"ID: "<<p->id<<endl;
-		presentar_or(p->Iz);	
-}
-}
-bool buscar(nodo3 *p, int x){
-		if(P==NULL){
-		return false; 
-	}
-	else if(x > p->id){
-		if(p->id==x){
-			return true;
-		}
-		else{
-			agregar(p->De);
-		}
-						
-	}
-	else{		
-		if(p->id==x){
-			return true;
-		}
-		else{
-			agregar(p->Iz);
-		}
 		
-	}
+		ordenar(p->De);
+		cout<<"Id: "<<p->id<<endl;
+		ordenar(p->Iz);
+	
+	}	
+	
+	
 }

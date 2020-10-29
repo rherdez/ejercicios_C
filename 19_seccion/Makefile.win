@@ -1,15 +1,15 @@
-# Project: arboles
+# Project: cubetas_mitad
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = arboles.o nodo3.o
-LINKOBJ  = arboles.o nodo3.o
+OBJ      = cubeta_mitad.o nodo_cubeta.o cubeta.o nodo_cubeta_hija.o nodo_cubeta_conh.o
+LINKOBJ  = cubeta_mitad.o nodo_cubeta.o cubeta.o nodo_cubeta_hija.o nodo_cubeta_conh.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = arboles.exe
+BIN      = cubetas_mitad.exe
 CXXFLAGS = $(CXXINCS) -std=c++11
 CFLAGS   = $(INCS) -std=c++11
 RM       = rm.exe -f
@@ -24,8 +24,17 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-arboles.o: arboles.cpp
-	$(CPP) -c arboles.cpp -o arboles.o $(CXXFLAGS)
+cubeta_mitad.o: cubeta_mitad.cpp
+	$(CPP) -c cubeta_mitad.cpp -o cubeta_mitad.o $(CXXFLAGS)
 
-nodo3.o: nodo3.cpp
-	$(CPP) -c nodo3.cpp -o nodo3.o $(CXXFLAGS)
+nodo_cubeta.o: nodo_cubeta.cpp
+	$(CPP) -c nodo_cubeta.cpp -o nodo_cubeta.o $(CXXFLAGS)
+
+cubeta.o: cubeta.cpp
+	$(CPP) -c cubeta.cpp -o cubeta.o $(CXXFLAGS)
+
+nodo_cubeta_hija.o: nodo_cubeta_hija.cpp
+	$(CPP) -c nodo_cubeta_hija.cpp -o nodo_cubeta_hija.o $(CXXFLAGS)
+
+nodo_cubeta_conh.o: nodo_cubeta_conh.cpp
+	$(CPP) -c nodo_cubeta_conh.cpp -o nodo_cubeta_conh.o $(CXXFLAGS)

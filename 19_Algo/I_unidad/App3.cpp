@@ -8,6 +8,7 @@ void restar(int, int);
 int multi();
 int divi(int,int);
 int pre(int);
+int sumatoria(int);
 int n1,n2;
 int main(int argc, char** argv) {
 	int op;
@@ -19,6 +20,7 @@ int main(int argc, char** argv) {
 		cout<<"3) Multiplicar "<<endl;
 		cout<<"4) Dividir "<<endl;
 		cout<<"5) Presentar"<<endl;
+		cout<<"6) Sumatoria  "<<endl;
 		cout<<"0) Salir"<<endl;
 		cin>>op;
 		switch(op){
@@ -44,6 +46,10 @@ int main(int argc, char** argv) {
 				break;
 			case 5:
 				pre(10);
+				system("pause");
+				break;
+			case 6:
+				cout<<"La sumatoria es: "<<sumatoria(-10)<<endl;
 				system("pause");
 				break;
 			case 0:
@@ -81,7 +87,17 @@ int pre(int x){
 		return 0;		
 	}
 	else{
-		pre(x-1);
 		cout<<"No: "<<x<<endl;
+		pre(x-1);
+
+	}
+}
+
+int sumatoria(int x){
+	if(x<0){
+		return 0;
+	}
+	else{
+		return x+sumatoria(x-1);
 	}
 }

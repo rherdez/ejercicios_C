@@ -8,6 +8,7 @@ void resta(int, int);
 int multi();
 int divi(int,int);
 int pre(int);
+int sumatoria(int);
 
 int n1,n2;
 
@@ -50,6 +51,10 @@ int main(int argc, char** argv) {
 				pre(10);
 				system("pause");
 				break;
+			case 6:
+				cout<<"La sumatoria es:"<<sumatoria(10)<<endl;
+				system("pause");
+				break;
 			case 0:
 				break;
 			default:
@@ -86,6 +91,14 @@ int pre(int x){
 	
 		pre(x-1);
 		cout<<x<<endl;
+	}
+}
+int sumatoria(int x){
+	if(x<0){
+		return 0;
+	}
+	else{
+		return x+sumatoria(x-1);
 	}
 }
 

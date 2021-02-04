@@ -88,9 +88,9 @@ int pre(int x){
 		return 0;
 	}
 	else{
-	
-		pre(x-1);
 		cout<<x<<endl;
+		pre(x-1);
+	
 	}
 }
 int sumatoria(int x){

@@ -1,6 +1,6 @@
 [Project]
-FileName=App4.dev
-Name=App4
+FileName=lista_1.dev
+Name=lista_1
 Type=1
 Ver=2
 ObjFiles=
@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=00000000c0000000000000000
-UnitCount=5
+UnitCount=3
 
 [VersionInfo]
 Major=1
@@ -50,8 +50,8 @@ ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
-[Unit1]
-FileName=app4.cpp
+[Unit2]
+FileName=nodo.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -60,8 +60,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit2]
-FileName=carro.h
+[Unit1]
+FileName=lista_1.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -71,27 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=carro.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit4]
-FileName=camion.h
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit5]
-FileName=camion.cpp
+FileName=nodo.cpp
 CompileCpp=1
 Folder=
 Compile=1

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "carro.h"
-
+#include "camion.h""
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 int op=0;
@@ -37,9 +37,25 @@ void ordenamiento(){
 	}
 	
 }
-
+camion mate;
 int main(int argc, char** argv) {
 	
+	mate.tam_carroceria=5;
+	mate.tipo_carroceria="madera";
+	mate.marca="Mack";
+	mate.n_llantas=6;
+	mate.dir.calle=4;
+	
+
+	cout<<"Tamaño Carroceria: "<<mate.tam_carroceria<<endl;
+	cout<<"Tipo de Carroceria: "<<mate.tipo_carroceria<<endl;
+	cout<<"Marca: "<<mate.marca<<endl;
+	cout<<"Llantas: "<<mate.n_llantas<<endl;
+	cout<<"Costo:"<< mate.costoxllanta()<<endl;
+	cout<<"Test: "<<mate.enviar_test()<<endl;
+	cout<<"Calle: "<<mate.dir.calle<<endl;
+	
+/*	
 do{
 	cout<<"Menu"<<endl;
 	cout<<"1) Agregar"<<endl;
@@ -66,6 +82,6 @@ do{
 	}
 	
 }while(op!=0);
-	
+*/	
 	return 0;
 }

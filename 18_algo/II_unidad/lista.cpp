@@ -1,11 +1,14 @@
 #include <iostream>
 #include <fstream>
+#include <stdlib.h>
+#include <ctime>
 #include "nodo.h"
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 
-nodo *I,*T,*F,*A;
-
+nodo *I,*T,*F,*A,*T2;
+void llenar();
+void ordenar();
 void agregar(int x, string y);
 void agregar(char[], char[]);
 void presentar();
@@ -18,6 +21,8 @@ void limpiar();
 int op,x;
 string y;
 int main(int argc, char** argv) {
+	srand(time(NULL));
+	llenar();
 	do{
 		cout<<"Menu"<<endl;
 		cout<<"1) Agregar"<<endl;
@@ -27,6 +32,7 @@ int main(int argc, char** argv) {
 		cout<<"5) Eliminar"<<endl;
 		cout<<"6) Guardar"<<endl;
 		cout<<"7) Leer"<<endl;
+		cout<<"8) Ordenar"<<endl;
 		cout<<"0) Salir"<<endl;
 		cin>>op;
 		
@@ -61,6 +67,9 @@ int main(int argc, char** argv) {
 				break;
 			case 7:
 				leer();
+				break;
+			case 8:
+				ordenar();
 				break;
 			case 0:
 				break;
@@ -201,4 +210,34 @@ void leer(){
 		
 	}
 	archivo.close();
+}
+void llenar(){
+	for(int i=0;i<10;i++){
+		agregar(rand()%50,"abc");
+	}
+}
+void ordenar(){
+	T2=I;
+	nodo temp;
+	while(T2!=NULL){
+		T=I;
+		A=T;
+		while(T!=NULL){
+			if(T->id > A->id){
+				temp.id=T->id;
+				temp.nombre=T->nombre;
+				
+				T->id=A->id;
+				T->nombre=A->nombre;
+				
+				A->id=temp.id;
+				A->nombre=temp.nombre;
+				
+			}
+			A=T;
+			T=T->sig;
+		}
+		
+		T2=T2->sig;
+	}
 }

@@ -1,15 +1,15 @@
-# Project: lista_simple
+# Project: lista_doble2
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = lista_simple.o nodo.o
-LINKOBJ  = lista_simple.o nodo.o
+OBJ      = lista_doble2.o nodo_doble.o mi_lista.o
+LINKOBJ  = lista_doble2.o nodo_doble.o mi_lista.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = lista_simple.exe
+BIN      = lista_doble2.exe
 CXXFLAGS = $(CXXINCS) -std=c++11
 CFLAGS   = $(INCS) -std=c++11
 RM       = rm.exe -f
@@ -24,8 +24,11 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-lista_simple.o: lista_simple.cpp
-	$(CPP) -c lista_simple.cpp -o lista_simple.o $(CXXFLAGS)
+lista_doble2.o: lista_doble2.cpp
+	$(CPP) -c lista_doble2.cpp -o lista_doble2.o $(CXXFLAGS)
 
-nodo.o: nodo.cpp
-	$(CPP) -c nodo.cpp -o nodo.o $(CXXFLAGS)
+nodo_doble.o: nodo_doble.cpp
+	$(CPP) -c nodo_doble.cpp -o nodo_doble.o $(CXXFLAGS)
+
+mi_lista.o: mi_lista.cpp
+	$(CPP) -c mi_lista.cpp -o mi_lista.o $(CXXFLAGS)
